@@ -1,0 +1,38 @@
+# Images Folder
+
+This folder should contain the following images for your homepage:
+
+## Required Images:
+
+1. **profile.jpg** - Your professional headshot
+   - Recommended size: 300x300px or larger
+   - Format: JPG or PNG
+   - Should be a clear, professional photo
+
+2. **project1.jpg** - Image for your first featured project
+   - Recommended size: 400x300px or larger
+   - Should showcase your project visually
+
+3. **project2.jpg** - Image for your second featured project
+   - Recommended size: 400x300px or larger
+   - Should showcase your project visually
+
+4. **project3.jpg** - Image for your third featured project
+   - Recommended size: 400x300px or larger
+   - Should showcase your project visually
+
+## Image Guidelines:
+
+- Use high-quality images
+- Ensure good lighting and composition
+- Keep file sizes reasonable (under 1MB each)
+- Use consistent aspect ratios for project images
+- Consider using placeholder images from sites like Unsplash or Pexels if you don't have project images yet
+
+## Placeholder Images:
+
+If you need placeholder images while setting up, you can use:
+- https://via.placeholder.com/300x300 for profile image
+- https://via.placeholder.com/400x300 for project images
+
+Replace these with your actual images once you have them ready.
