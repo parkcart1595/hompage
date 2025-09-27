@@ -90,6 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Initialize EmailJS
+(function() {
+    emailjs.init("tz6mwUf9Sd50K5KhK"); // Replace with your EmailJS public key
+})();
+
 // Contact form handling
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
@@ -97,7 +102,6 @@ if (contactForm) {
         e.preventDefault();
         
         // Get form data
-        const formData = new FormData(contactForm);
         const name = contactForm.querySelector('input[type="text"]').value;
         const email = contactForm.querySelector('input[type="email"]').value;
         const subject = contactForm.querySelectorAll('input[type="text"]')[1].value;
@@ -116,18 +120,30 @@ if (contactForm) {
             return;
         }
         
-        // Simulate form submission
+        // Send email using EmailJS
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
-        setTimeout(() => {
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            contactForm.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message
+        };
+        
+        emailjs.send('service_9lakt4l', 'service_9lakt4l', templateParams)
+            .then(function(response) {
+                alert('Thank you for your message! I\'ll get back to you soon.');
+                contactForm.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, function(error) {
+                alert('Sorry, there was an error sending your message. Please try again or contact me directly at parkcart@umich.edu');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
     });
 }
 
